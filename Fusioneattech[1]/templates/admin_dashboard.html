@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f4f9;
+        }
+        .sidebar {
+            height: 100vh;
+            background: #343a40;
+            color: #fff;
+            padding: 20px;
+        }
+        .sidebar h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .sidebar a {
+            color: #adb5bd;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .sidebar a:hover {
+            color: #fff;
+        }
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        .navbar {
+            background: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .card-title {
+            font-size: 1.2rem;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Admin Panel</h2>
+            <a href="{{ url_for('admin_dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('admin_logout') }}">Logout</a>
+        </div>
+        <!-- Main Content -->
+        <div class="content">
+            <nav class="navbar navbar-light">
+                <div class="container-fluid">
+                    <span class="navbar-brand mb-0 h1">Admin Dashboard</span>
+                </div>
+            </nav>
+            <div class="container mt-4">
+                <!-- Contact Queries -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        Contact Queries
+                    </div>
+                    <div class="card-body">
+                        {% if queries %}
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Message</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for query in queries %}
+                                <tr>
+                                    <td>{{ loop.index }}</td>
+                                    <td>{{ query.name }}</td>
+                                    <td>{{ query.email }}</td>
+                                    <td>{{ query.message }}</td>
+                                    <td>{{ query.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        {% else %}
+                        <p>No contact queries available.</p>
+                        {% endif %}
+                    </div>
+                </div>
+                <!-- Newsletter Subscribers -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        Newsletter Subscribers
+                    </div>
+                    <div class="card-body">
+                        {% if subscribers %}
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Email</th>
+                                    <th>Date Subscribed</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for subscriber in subscribers %}
+                                <tr>
+                                    <td>{{ loop.index }}</td>
+                                    <td>{{ subscriber.email }}</td>
+                                    <td>{{ subscriber.subscribed_at.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        {% else %}
+                        <p>No newsletter subscribers available.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

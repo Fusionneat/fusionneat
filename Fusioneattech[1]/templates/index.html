@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fusionneat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @keyframes slide-in {
+            0% { transform: translateY(-20px); opacity: 0; }
+            50% { transform: translateY(10px); opacity: 0.5; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fade-pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        @keyframes up-down {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .animate-slide-in {
+            animation: slide-in 2s ease-in-out infinite alternate;
+        }
+
+        .animate-fade-pulse {
+            animation: fade-pulse 3s ease-in-out infinite;
+        }
+
+        .animate-up-down {
+            animation: up-down 3s ease-in-out infinite;
+        }
+
+        .transition-scale {
+            transition: transform 0.5s ease;
+        }
+
+        .icon-flip {
+        transition: transform 0.6s ease-in-out;
+    }
+
+    .icon-flip:hover {
+        transform: rotateY(180deg);
+    }
+
+    body {
+            background-color: #0b132b;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+        .testimonial-section {
+            padding: 50px 0;
+        }
+        .testimonial-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .testimonial-header h2 {
+            color: #f7ca18;
+            font-weight: bold;
+        }
+        .testimonial-header p {
+            color: #d3d3d3;
+        }
+        .testimonial {
+            background: #1c2541;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .testimonial .stars {
+            color: #f7ca18;
+            margin-bottom: 15px;
+        }
+        .testimonial .quote {
+            font-size: 40px;
+            color: #f7ca18;
+        }
+        .testimonial h4 {
+            font-weight: bold;
+            margin-top: 15px;
+            color: #ffffff;
+        }
+        .testimonial p {
+            color: #d3d3d3;
+            margin-top: 10px;
+        }
+        .testimonial-profile {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .testimonial-profile img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .testimonial-profile span {
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .testimonial-profile small {
+            color: #d3d3d3;
+        }
+        .profile-carousel img {
+            border-radius: 50%;
+        }
+        .profile-carousel button {
+            background: none;
+            border: none;
+            outline: none;
+        }
+        .profile-carousel .carousel-control-prev-icon,
+        .profile-carousel .carousel-control-next-icon {
+            filter: invert(1);
+        }
+
+              /* Dotted line between steps */
+      .dotted-line {
+        position: absolute;
+        left: 25px; /* Align with icons */
+        top: 10px;
+        height: 100%;
+        width: 2px;
+        background: repeating-linear-gradient(white, white 5px, gray 5px, gray 10px);
+      }
+  
+      /* Hover effect for icons */
+      .icon {
+        transition: all 0.3s ease;
+      }
+  
+      .icon:hover {
+        filter: brightness(0) saturate(100%) invert(21%) sepia(94%) saturate(3446%) hue-rotate(191deg) brightness(93%) contrast(92%);
+      }
+  
+      /* Font size adjustments */
+      .step h4 {
+        font-size: 1rem; /* Adjusted font size */
+      }
+  
+      .step h5 {
+        font-size: 1.25rem; /* Adjusted font size */
+      }
+
+      @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .floating-svg {
+    animation: float 3s ease-in-out infinite;
+  }
+    </style>
+</head>
+<body class="bg-gradient-to-r from-purple-900 via-indigo-800 to-blue-500 text-white">
+    <header class="flex justify-between items-center p-4">
+        <div class="flex items-center">
+            <div class="bg-white text-purple-900 font-bold px-2 py-1 rounded-full">F</div>
+            <span class="text-xl font-semibold ml-2">Fusionneat</span>
+        </div>
+        <nav class="space-x-6">
+            <a href="#" class="hover:text-blue-400">Home</a>
+            <a href="about.fusioneat.tech" class="hover:text-blue-400">About</a>
+            <a href="#services" class="hover:text-blue-400">Services</a>
+            <a href="#contact" class="hover:text-blue-400">Pricing</a>
+            <a href="#about" class="hover:text-blue-400">Company</a>
+        </nav>
+        <div class="space-x-3">
+            <button class="bg-blue-500 px-4 py-2 rounded-md hover:bg-blue-600"onclick="location.href='mailto:contactus@fusionneat.tech'">Get Started</button>
+        </div>
+    </header>
+
+    <main class="flex flex-col-reverse md:flex-row items-center justify-between text-center md:text-left mt-8 px-5">
+        <div class="md:w-1/2">
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight animate-slide-in">Fusionneat: Crafting Seamless Digital Solutions for Your Success.</h1>
+            <p class="mt-4 text-lg text-left text-gray-400">Fusionneat specializes in delivering innovative and reliable software solutions tailored to meet the unique needs of businesses.<br> With a focus on quality and customer satisfaction, Fusinneat turns ideas into impactful solutions.</p>
+
+            <div class="mt-6 flex flex-wrap justify-center md:justify-start space-x-4">
+              <!-- Request Quote Button -->
+              <button class="bg-indigo-600 px-6 py-3 rounded-md text-white hover:bg-indigo-700 transition-transform hover:scale-105" onclick="toggleRequestQuoteModal()">
+                  Request Quote
+              </button>
+          
+              <!-- Contact for Special Requirements Button -->
+              <button class="flex items-center px-6 py-3 border border-white rounded-md hover:bg-indigo-600 transition-transform hover:scale-105" onclick="location.href='mailto:contactus@fusionneat.tech'">
+                  <img src="{{ url_for('static', filename='contact.svg') }}" height="20" width="20" />
+                  Contact for special requirements
+              </button>
+          </div>
+          
+          <!-- Modal for Request Quote -->
+          <div id="requestQuoteModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+              <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full text-center">
+                  <h3 class="text-xl font-bold text-blue-900 mb-4">Request a Quote</h3>
+                  <p class="text-gray-600 mb-6">Choose how you'd like to contact us:</p>
+                  <div class="flex justify-center space-x-4">
+                      <!-- WhatsApp Link -->
+                      <a href="https://wa.me/916361366783?text=Hello,%20I%20am%20interested%20in%20learning%20more%20about%20your%20services%20and%20pricing.%20Could%20you%20please%20provide%20more%20details?" 
+                         target="_blank" 
+                         class="bg-green-500 hover:bg-green-600 text-white py-2 px-6 rounded-full">
+                          WhatsApp
+                      </a>
+                      <!-- Email Link -->
+                      <a href="mailto:contactus@fusionneat.tech"
+                         class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-full">
+                          Email
+                      </a>
+                  </div>
+                  <button class="mt-6 text-gray-500 hover:text-gray-700" onclick="toggleRequestQuoteModal()">Cancel</button>
+              </div>
+          </div>
+          
+          <script>
+              // Function to toggle the visibility of the modal
+              function toggleRequestQuoteModal() {
+                  const modal = document.getElementById('requestQuoteModal');
+                  modal.classList.toggle('hidden');
+              }
+          </script>
+          
+      </div>
+
+        <div class="md:w-1/2 flex justify-center items-center animate-up-down">
+            <img src="{{ url_for('static', filename='fnwave.png') }}" alt="Illustration" class="w-70 h-70 object-contain transition-scale" id="illustration" />
+        </div>
+    </main>
+
+
+
+    <div style="position: fixed; bottom: 20px; left: 20px; z-index: 1000;">
+      <a href="https://wa.me/916361366783" target="_blank"><img src="{{ url_for('static', filename='whatsapp.png') }}" alt="WhatsApp" class="h-8 w-8"></a>
+      <a href="https://www.instagram.com/fusionneat/profilecard/?igsh=ZW42MTdvdHoyM2hx" target="_blank"><img src="{{ url_for('static', filename='instagram.png') }}" alt="Instagram" class="h-8 w-8 mt-2"></a>
+      <a href="https://linkedin.com/company/fusionneat" target="_blank"><img src="{{ url_for('static', filename='linkedin.png') }}" alt="LinkedIn" class="h-8 w-8 mt-2"></a>
+      <a href="https://x.com/fusionneat" target="_blank"><img src="{{ url_for('static', filename='twitter.png') }}" alt="X" class="h-8 w-8 mt-2"></a>
+    </div>
+    
+
+
+<!-- Chatbot Icon -->
+<div id="chatbot-icon" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+  <img src="{{ url_for('static', filename='chatbot.png') }}" alt="Chatbot" style="width: 60px; height: 60px; cursor: pointer;" onclick="toggleChatbot()">
+</div>
+
+<!-- Chatbox -->
+<div id="chatbox" style="display: none; position: fixed; bottom: 80px; right: 20px; z-index: 1000; background: white; color: black; width: 300px; border-radius: 8px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);">
+  <div style="padding: 10px; background: #007bff; color: white; font-weight: bold; cursor: pointer;" onclick="toggleChatbot()">Chatbot</div>
+  <div id="chat-content" style="padding: 10px; max-height: 400px; overflow-y: auto;">
+      <p>Welcome! How can I help you?</p>
+      <!-- Chat content will go here -->
+  </div>
+  <input type="text" id="user-input" style="width: calc(100% - 20px); padding: 10px; margin: 10px;" placeholder="Type your query..." onkeypress="handleUserInput(event)">
+</div>
+
+<script>
+  // Toggle the visibility of the chatbox
+  function toggleChatbot() {
+      const chatbox = document.getElementById('chatbox');
+      chatbox.style.display = chatbox.style.display === 'none' ? 'block' : 'none';
+  }
+
+  // Handle user input when pressing Enter
+  function handleUserInput(event) {
+    if (event.key === 'Enter') {
+        const userInput = document.getElementById('user-input').value.trim();
+        if (userInput) {
+            displayUserMessage(userInput);
+            getChatbotResponse(userInput);
+        }
+        document.getElementById('user-input').value = '';  // Clear input
+    }
+  }
+
+  // Display user message in the chat content
+  function displayUserMessage(message) {
+      const chatContent = document.getElementById('chat-content');
+      const userMessage = document.createElement('p');
+      userMessage.textContent = `You: ${message}`;
+      chatContent.appendChild(userMessage);
+      chatContent.scrollTop = chatContent.scrollHeight;  // Scroll to the bottom
+  }
+
+  // Display chatbot response in the chat content
+  function displayChatbotResponse(response) {
+      const chatContent = document.getElementById('chat-content');
+      const chatbotMessage = document.createElement('p');
+      chatbotMessage.textContent = `Chatbot: ${response}`;
+      chatContent.appendChild(chatbotMessage);
+      chatContent.scrollTop = chatContent.scrollHeight;  // Scroll to the bottom
+  }
+
+  // Fetch response from the Flask backend (chatbot)
+  function getChatbotResponse(userQuery) {
+      fetch(`/chat?msg=${encodeURIComponent(userQuery)}`)
+          .then(response => response.json())
+          .then(data => {
+              displayChatbotResponse(data.response);
+          })
+          .catch(error => {
+              console.error('Error:', error);
+              displayChatbotResponse("Sorry, there was an error processing your request.");
+          });
+  }
+</script>
+
+
+
+<section class="text-center py-12 bg-white">
+    <h2 class="text-2xl font-bold mb-4 text-black">With all the Features You Need</h2>
+    <p class="text-gray-500 max-w-xl mx-auto mb-10">
+        Get all the features you need to grow and streamline your business, designed with precision and innovation.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="features">
+      <!-- Good Performance -->
+      <div class="flex flex-col items-center">
+        <img src="{{ url_for('static', filename='test.svg') }}" alt="Good Performance Icon" class="h-12 w-12 mb-4" />
+        <h3 class="font-semibold text-lg mb-2 text-black">Best Performance</h3>
+        <p class="text-gray-500 text-sm">
+            Experience reliable and optimized performance for seamless business operations.
+        </p>
+      </div>
+      <!-- Highly Secure -->
+      <div class="flex flex-col items-center">
+        <img src="{{ url_for('static', filename='test3.svg') }}" alt="Highly Secure Icon" class="h-12 w-12 mb-4" />
+        <h3 class="font-semibold text-lg mb-2 text-black">Highly Secure</h3>
+        <p class="text-gray-500 text-sm">
+            ensures advanced encryption and real-time threat detection to protect sensitive data and transactions.
+        </p>
+      </div>
+      <!-- Fast Development -->
+      <div class="flex flex-col items-center">
+        <img src="{{ url_for('static', filename='test2.svg') }}" alt="Fast Development Icon" class="h-12 w-12 mb-4" />
+        <h3 class="font-semibold text-lg mb-2 text-black">Fast Development</h3>
+        <p class="text-gray-500 text-sm">
+            accelerates project delivery with streamlined workflows, reusable components, and rapid integration capabilities.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-6 py-8 px-4 bg-gray-50">
+    <!-- Card 1 -->
+    <div class="bg-pink-100 rounded-lg shadow-md p-6 w-full md:w-1/2 flex items-center transform transition-transform duration-300 hover:scale-105 hover:-translate-y-2" id="cta">
+      <div class="w-2/3">
+        <h3 class="text-lg font-bold text-black mb-2">Utilize your software data</h3>
+        <p class="text-gray-600 text-sm">
+            leverages analytics and insights to optimize performance, enhance decision-making, and drive business growth.
+        </p>
+        <button class="mt-4 bg-transparent border border-blue-500 text-blue-500 py-1.5 px-3 rounded-lg text-sm hover:bg-blue-500 hover:text-white">
+          Contact Now
+        </button>
+      </div>
+      <!-- Illustration --> 
+      <div
+        class="w-1/3 flex justify-end transform transition-transform duration-300 hover:scale-110">
+        <img src="{{ url_for('static', filename='cta-img-1.png') }}" alt="Illustration 1" class="h-28 w-28 object-contain" />
+      </div>
+    </div>
+  
+    <!-- Card 2 -->
+    <div
+      class="bg-blue-100 rounded-lg shadow-md p-6 w-full md:w-1/2 flex items-center transform transition-transform duration-300 hover:scale-105 hover:-translate-y-2">
+      <div class="w-2/3">
+        <h3 class="text-lg font-bold text-black mb-2">Get time to time updates</h3>
+        <p class="text-gray-600 text-sm">
+            provides real-time notifications and automatic updates to keep you informed of the latest changes and improvements.
+        </p>
+        <button class="mt-4 bg-transparent border border-blue-500 text-blue-500 py-1.5 px-3 rounded-lg text-sm hover:bg-blue-500 hover:text-white">
+            Contact Now
+        </button>
+      </div>
+      <!-- Illustration -->
+      <div
+        class="w-1/3 flex justify-end transform transition-transform duration-300 hover:scale-110">
+        <img src="{{ url_for('static', filename='cta-img-2.png') }}" alt="Illustration 2" class="h-28 w-28 object-contain" />
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="bg-white py-12">
+    <div class="container mx-auto text-center px-4" id="services">
+      <h2 class="text-blue-600 text-xl font-semibold mb-4">Our Services</h2>
+      <h1 class="text-4xl font-bold text-gray-800 mb-6">Explore Our Offerings</h1>
+      <p class="text-gray-500 max-w-2xl mx-auto mb-10">
+        We provide a wide range of services to meet your needs. Dynamically grow your business with our tailored solutions.
+      </p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <!-- Service 1: Web Development -->
+        <div class="service-card bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+          <div class="icon-container mb-4 mx-auto">
+            <img src="{{ url_for('static', filename='world-wide-web.png') }}" alt="Web Development Icon" class="w-16 h-16 mx-auto rounded-full object-cover" />
+          </div>
+          <h3 class="font-semibold text-lg text-gray-800 mb-2">Web Development</h3>
+          <p class="text-sm text-gray-500 mb-6">High-quality, responsive websites tailored to your business needs.</p>
+          <div class="service-details p-4 bg-gray-50 rounded-lg">
+            <h4 class="text-xl font-semibold text-blue-600 mb-2">Service Details</h4>
+            <p class="text-gray-600">
+              We deliver cutting-edge web solutions, ensuring a seamless and responsive user experience. Our expertise includes e-commerce platforms, portfolio websites, and enterprise-level applications.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Service 2: App Development -->
+        <div class="service-card bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+          <div class="icon-container mb-4 mx-auto">
+            <img src="{{ url_for('static', filename='mobile-development.png') }}" alt="App Development Icon" class="w-16 h-16 mx-auto rounded-full object-cover" />
+          </div>
+          <h3 class="font-semibold text-lg text-gray-800 mb-2">App Development</h3>
+          <p class="text-sm text-gray-500 mb-6">Custom mobile app solutions to grow your business on the go.</p>
+          <div class="service-details p-4 bg-gray-50 rounded-lg">
+            <h4 class="text-xl font-semibold text-blue-600 mb-2">Service Details</h4>
+            <p class="text-gray-600">
+              Our mobile app development services include creating feature-rich and user-friendly applications for iOS and Android platforms, ensuring smooth functionality and exceptional design.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Service 3: Desktop Development -->
+        <div class="service-card bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+          <div class="icon-container mb-4 mx-auto">
+            <img src="{{ url_for('static', filename='monitor.png') }}" alt="Desktop Development Icon" class="w-16 h-16 mx-auto rounded-full object-cover" />
+          </div>
+          <h3 class="font-semibold text-lg text-gray-800 mb-2">Desktop Development</h3>
+          <p class="text-sm text-gray-500 mb-6">Robust desktop applications to optimize your workflow.</p>
+          <div class="service-details p-4 bg-gray-50 rounded-lg">
+            <h4 class="text-xl font-semibold text-blue-600 mb-2">Service Details</h4>
+            <p class="text-gray-600">
+              We create powerful and scalable desktop applications tailored to your specific business needs, ensuring performance and reliability.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 3: Ai Ajent -->
+        <div class="service-card bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+          <div class="icon-container mb-4 mx-auto">
+            <img src="{{ url_for('static', filename='assistant.png') }}" alt="Ai Ajent" class="w-16 h-16 mx-auto rounded-full object-cover" />
+          </div>
+          <h3 class="font-semibold text-lg text-gray-800 mb-2">Ai Ajent Development</h3>
+          <p class="text-sm text-gray-500 mb-6">Ai ajent Development as your requirements</p>
+          <div class="service-details p-4 bg-gray-50 rounded-lg">
+            <h4 class="text-xl font-semibold text-blue-600 mb-2">Service Details</h4>
+            <p class="text-gray-600">
+              We offer AI agent development services, including conversational AI, automation, NLP, and ML. Leveraging Dialogflow, TensorFlow, and Node.js, we deploy on AWS, Google Cloud, and Azure.
+            </p>
+          </div>
+        </div>
+        
+        
+        <!-- Service 4: Graphics Design -->
+        <div class="service-card bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+          <div class="icon-container mb-4 mx-auto">
+            <img src="{{ url_for('static', filename='web-design.png') }}" alt="Graphics Design Icon" class="w-16 h-16 mx-auto rounded-full object-cover" />
+          </div>
+          <h3 class="font-semibold text-lg text-gray-800 mb-2">Graphics Design</h3>
+          <p class="text-sm text-gray-500 mb-6">Creative and professional designs to enhance your brand identity.</p>
+          <div class="service-details p-4 bg-gray-50 rounded-lg">
+            <h4 class="text-xl font-semibold text-blue-600 mb-2">Service Details</h4>
+            <p class="text-gray-600">
+              Our team delivers stunning graphic designs, including logos, banners, and marketing materials, to effectively communicate your brand's message.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Service 5: Digital Marketing -->
+        <div class="service-card bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+          <div class="icon-container mb-4 mx-auto">
+            <img src="{{ url_for('static', filename='bullhorn.png') }}" alt="Digital Marketing Icon" class="w-16 h-16 mx-auto rounded-full object-cover" />
+          </div>
+          <h3 class="font-semibold text-lg text-gray-800 mb-2">Digital Marketing</h3>
+          <p class="text-sm text-gray-500 mb-6">Effective marketing strategies to grow your online presence.</p>
+          <div class="service-details p-4 bg-gray-50 rounded-lg">
+            <h4 class="text-xl font-semibold text-blue-600 mb-2">Service Details</h4>
+            <p class="text-gray-600">
+              Boost your online visibility and engagement with our data-driven digital marketing strategies, including SEO, PPC, and social media campaigns.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  
+  <section class="flex flex-col md:flex-row items-center justify-between px-8 py-12 bg-gray-50">
+    <!-- Text Section -->
+    <div class="w-full md:w-1/2 space-y-4" id="about">
+      <div class="flex items-center justify-start space-x-2">
+        <div class="bg-blue-500 rounded-lg p-3">
+          <img src="{{ url_for('static', filename='test2.svg') }}" alt="Shield Icon" class="w-6 h-6" />
+        </div>
+      </div>
+      <h2 class="text-3xl font-bold text-black leading-tight">
+        Advanced Analytics,<br> Understand Business
+      </h2>
+      <p class="text-gray-600">
+        We advancedly analyze your business, provide tailored solutions, and begin working on your project for optimized results.
+      </p> 
+      <div class="grid grid-cols-2 gap-x-8 gap-y-2 text-gray-700">
+        <div class="flex items-center space-x-2">
+          <img src="{{ url_for('static', filename='check.png') }}" alt="Check Icon" class="w-5 h-5 text-blue-500" />
+          <span>Enhanced Data Security</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <img src="{{ url_for('static', filename='check.png') }}" alt="Check Icon" class="w-5 h-5 text-blue-500" />
+          <span>Real-time Analytics</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <img src="{{ url_for('static', filename='check.png') }}" alt="Check Icon" class="w-5 h-5 text-blue-500" />
+          <span>Customizable Solutions</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <img src="{{ url_for('static', filename='check.png') }}" alt="Check Icon" class="w-5 h-5 text-blue-500" />
+          <span>Fast Implementation</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <img src="{{ url_for('static', filename='check.png') }}" alt="Check Icon" class="w-5 h-5 text-blue-500" />
+          <span>Ongoing Support </span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <img src="{{ url_for('static', filename='check.png') }}" alt="Check Icon" class="w-5 h-5 text-blue-500" />
+          <span>Scalable Growth</span>
+        </div>
+      </div>
+      <a href="about.fusionneat.tech" class="text-blue-500 font-semibold flex items-center space-x-1">
+        <span>Know More About Us</span>
+      </a>
+    </div>
+    
+    <div class="w-full md:w-1/2 flex items-center justify-center relative">
+        <!-- Single Illustration -->
+        <div class="relative w-74 h-74">
+          <img src="{{ url_for('static', filename='widget-11.png') }}" alt="Illustration with Chart and Profile Card" class="w-full h-full object-contain" />
+        </div>
+      </div>
+  </section>
+  
+
+  <section class="testimonial-section">
+    <div class="container" id="testimonials">
+        <div class="testimonial-header text-center">
+            <h2>Our Founders</h2>
+            <p>Information of our founders who are founders along with devlopers</p>
+        </div>
+
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                    <div class="carousel-inner">
+                        <!-- Testimonial 1 -->
+                        <div class="carousel-item active">
+                            <div class="testimonial">
+                                <span class="quote">&#8220;</span>
+                                <h4>Why choose us for innovation?</h4>
+                                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <p>We focus on delivering creative, cutting-edge solutions that are customized to meet your unique business challenges.</p>
+                                <div class="testimonial-profile">
+                                    <img src="{{ url_for('static', filename='ofc.png') }}" alt="Joe Richard">
+                                    <div> 
+                                        <span>Hari Marathi</span><br>
+                                        <small>Co-Founder</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="carousel-item">
+                            <div class="testimonial">
+                                <span class="quote">&#8220;</span>
+                                <h4>Why trust us for support?</h4>
+                                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <p>Our experienced team offers dependable, 24/7 support to ensure smooth operations and quick resolution of any issues.</p>
+                                <div class="testimonial-profile">
+                                    <img src="{{ url_for('static', filename='uday.png') }}" alt="V uday">
+                                    <div>
+                                        <span>V Uday</span><br>
+                                        <small>Co-Founder</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="carousel-item">
+                            <div class="testimonial">
+                                <span class="quote">&#8220;</span>
+                                <h4>Why partner with us for growth?</h4>
+                                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <p>We provide scalable, future-ready solutions that grow with your business, adapting to changing demands and helping you succeed.</p>
+                                <div class="testimonial-profile">
+                                    <img src="{{ url_for('static', filename='WhatsApp Image 2024-12-13 at 22.59.36_70c1074f.jpg') }}" alt="Om B">
+                                    <div> 
+                                        <span>Om B</span><br>
+                                        <small>Co-Founder</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 text-center">
+                <img src="{{ url_for('static', filename='development-4536630.svg') }}" alt="" class="img-fluid rounded">
+                <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#videoModal">Watch Video</button>
+            </div>
+        </div>
+    </div>
+
+        <!-- Video Modal -->
+        <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="videoModalLabel">Watch Video</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div> 
+                    <div class="modal-body">
+                        <video controls width="100%">
+                            <source src="{{ url_for('static', filename='vid.mp4') }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<!-- Full-Width Process Section -->
+<section style="background-color: white; width: 100vw; margin: 0; padding: 0;">
+    <div class="container py-5" id="process">
+      <div class="text-center mb-5">
+        <h2 class="text-3xl font-bold text-gray-800">We Follow Our Work Process</h2>
+        <p class="text-gray-600">
+          Enthusiastically engage cross-media leadership skills for alternative experiences.<br>
+          Proactively drive vertical systems than intuitive architectures.
+        </p>
+      </div>
+      <div class="row align-items-center">
+        <!-- Image Section -->
+        <div class="col-md-6"> 
+          <img src="{{ url_for('static', filename='building-4781384.jpg') }}" alt="Buildings" class="rounded-lg shadow-md w-100">
+        </div>
+        <!-- Steps Section -->
+        <div class="col-md-6 position-relative">
+          <div class="steps">
+            <!-- Dotted Line -->
+            <div class="dotted-line"></div>
+            <!-- Step 1 --> 
+            <div class="mb-4 d-flex align-items-start step">
+              <img src="{{ url_for('static', filename='research.svg') }}" alt="Icon 1" class="me-3 icon" width="50">
+              <div>
+                <h4 class="text-md font-semibold text-gray-700">Step 1</h4>
+                <h5 class="text-lg font-bold text-gray-800">Research and Content Planning</h5>
+                <p class="text-gray-600">
+                    Conduct thorough research and strategic planning to align content with business goals, ensuring readiness for seamless integration into digital systems.
+                </p>
+              </div>
+            </div> 
+            <!-- Step 2 -->
+            <div class="mb-4 d-flex align-items-start step">
+              <img src="{{ url_for('static', filename='publish.svg') }}" alt="Icon 2" class="me-3 icon" width="50">
+              <div>
+                <h4 class="text-md font-semibold text-gray-700">Step 2</h4>
+                <h5 class="text-lg font-bold text-gray-800">Publishing and Execution</h5>
+                <p class="text-gray-600">
+                    Effectively manage the execution of content across platforms, ensuring error-free deployment and global standardization to maximize reach and impact.
+                </p>
+              </div>
+            </div>
+            <!-- Step 3 -->
+            <div class="mb-4 d-flex align-items-start step">
+              <img src="{{ url_for('static', filename='test.svg') }}" alt="Icon 3" class="me-3 icon" width="50">
+              <div>
+                <h4 class="text-md font-semibold text-gray-700">Step 3</h4>
+                <h5 class="text-lg font-bold text-gray-800">Product Prototyping</h5>
+                <p class="text-gray-600">
+                    Collaborate on building transparent, interactive prototypes, testing features and functionalities before full-scale product development.
+                </p>
+              </div>
+            </div>
+            <!-- Step 4 -->
+            <div class="d-flex align-items-start step">
+              <img src="{{ url_for('static', filename='deliver.svg') }}" alt="Icon 4" class="me-3 icon" width="50">
+              <div>
+                <h4 class="text-md font-semibold text-gray-700">Step 4</h4>
+                <h5 class="text-lg font-bold text-gray-800">Deliver the Final Product</h5>
+                <p class="text-gray-600">
+                    Finalize and launch the product, ensuring it meets all requirements and delivers exceptional performance to users.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="bg-white py-16" id="faq-section">
+    <div class="max-w-7xl mx-auto px-6" id="faq">
+      <h2 class="text-blue-500 text-lg font-semibold uppercase text-center">FAQ</h2>
+      <h1 class="text-gray-900 text-4xl font-bold text-center mb-10">
+        Frequently Asked Questions
+      </h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Left: FAQ Section -->
+        <div>
+          <div class="mb-8">
+            <h3 class="text-black text-xl font-bold">1. What services do you provide?</h3>
+            <p class="text-gray-600 mt-2">
+              We offer end-to-end software development, including web and mobile app development, UI/UX design, and custom solutions tailored to your business needs.
+            </p>
+          </div>
+          <div class="mb-8">
+            <h3 class="text-black text-xl font-bold">2. How long does a project take?</h3>
+            <p class="text-gray-600 mt-2">
+              The timeline depends on the project's complexity and requirements. Typically, a project can take 4-12 weeks to complete after finalizing the scope.
+            </p>
+          </div>
+          <div class="mb-8">
+            <h3 class="text-black text-xl font-bold">3. What is your pricing model?</h3>
+            <p class="text-gray-600 mt-2">
+              Our pricing is flexible and based on the project scope, size, and complexity. We provide both fixed-cost and hourly-rate models.
+            </p>
+          </div>
+          <div class="mb-8">
+            <h3 class="text-black text-xl font-bold">4. Can you work with existing systems?</h3>
+            <p class="text-gray-600 mt-2">
+              Absolutely! We specialize in integrating new solutions with existing systems and ensuring seamless functionality.
+            </p>
+          </div>
+        </div>
+  
+        <!-- Right: Illustration Section -->
+        <div class="flex justify-center items-center">
+          <img
+            src="{{ url_for('static', filename='faq.svg') }}"
+            alt="Illustration"
+            class="w-full h-auto floating-svg transition-all duration-700"
+            id="faq-image"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-16 px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <!-- Main Section -->
+      <p class="text-yellow-400 font-semibold">Let's Try! Get Free Support</p>
+      <h2 class="text-4xl font-bold mt-4">Contact Us Now</h2>
+      <p class="mt-2 text-lg">
+        We can help you to create your dream website for better business revenue.
+      </p>
+      <div class="mt-8 flex justify-center space-x-4">
+        <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-full shadow-lg">
+          Contact Us
+        </button>
+        <button class="bg-transparent border-2 border-white text-white py-2 px-6 rounded-full hover:bg-white hover:text-blue-900">
+          Watch Demo
+        </button>
+      </div>
+      <div class="mt-6 flex justify-center space-x-8 text-sm text-gray-300">
+        <div class="flex items-center space-x-2">
+          <span>✅</span> <span>On Time Delivery</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <span>✅</span> <span>Support 24/7</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <span>✅</span> <span>1 Year Maintainance</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="mt-12 bg-gray-100 py-16 px-8">
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8" id="contact">
+      <h3 class="text-2xl font-bold text-blue-900 text-center mb-6">Contact Form</h3>
+      <!-- Inside index.html -->
+<form action="{{ url_for('contact') }}" method="POST" class="space-y-6">
+  {{ form.hidden_tag() }}  <!-- Include hidden CSRF token -->
+  <div>
+      <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+      {{ form.name(class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500") }}
+  </div>
+  <div>
+      <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+      {{ form.email(class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500") }}
+  </div>
+  <div>
+      <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+      {{ form.message(class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500") }}
+  </div>
+  <div class="text-center">
+      <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-full shadow-lg">
+          Submit
+      </button>
+  </div>
+</form>
+
+    </div>
+  </section>
+  
+
+
+  
+
+<section class="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Newsletter Subscription -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Our Newsletter</h4>
+          <p class="text-gray-300 text-sm mb-4">
+            Our latest news, articles, and resources, we will send to your inbox weekly.
+          </p>
+          <form action="{{ url_for('subscribe') }}" method="POST" class="flex space-x-2">
+            {{ form.hidden_tag() }}
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="w-full py-2 px-4 rounded-md bg-white text-gray-800 focus:outline-none"
+              required
+            />
+            <button
+              type="submit"
+              class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md"
+            >
+              Subscribe
+            </button>
+          </form>
+          <div class="mt-4">
+            <p class="text-sm text-yellow-400">10/10 Overall rating</p>
+            <div class="flex space-x-1">
+              <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Useful Links: Primary Pages -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Primary Pages</h4>
+          <ul class="text-sm space-y-2">
+            <li><a href="#" class="hover:text-yellow-400">Home</a></li>
+            <li><a href="about.fusionneat.tech" class="hover:text-yellow-400">About Us</a></li>
+            <li><a href="#services" class="hover:text-yellow-400">Services</a></li>
+            <li><a href="career.fusionneat.tech" class="hover:text-yellow-400">Career</a></li>
+            <li><a href="#about" class="hover:text-yellow-400">Integrations</a></li>
+          </ul>
+        </div>
+  
+        <!-- Useful Links: Pages -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Pages</h4>
+          <ul class="text-sm space-y-2">
+            <li><a href="#contact" class="hover:text-yellow-400">Pricing</a></li>
+            <li><a href="blogs.fusionneat.tech" class="hover:text-yellow-400">Blog</a></li>
+            <li><a href="blogs.fusionneat.tech" class="hover:text-yellow-400">Blog Details</a></li>
+            <li><a href="#contact" class="hover:text-yellow-400">Contact</a></li>
+          </ul>
+        </div>
+  
+        <!-- Useful Links: Templates -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Usefull Liks</h4>
+          <ul class="text-sm space-y-2">
+            <li><a href="#conatct" class="hover:text-yellow-400">Contact</a></li>
+            <li><a href="#contact" class="hover:text-yellow-400">Support</a></li>
+            <li><a href="#contact" class="hover:text-yellow-400">Request for Demo</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Coming Soon</a></li>
+
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Footer Bottom -->
+      <div class="border-t border-gray-700 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-sm text-gray-400">
+          © 2024 Fusionneat Rights Reserved. Designed by Hari-Co Founder.
+        </p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+          <!-- Social Media Links -->
+          <a href="https://www.facebook.com/profile.php?id=61568773539969" target="_blank" class="flex items-center space-x-2 text-gray-400 hover:text-white">
+            <i class="fab fa-facebook"></i>
+            <span>Facebook</span>
+          </a>
+          <a href="https://x.com/fusionneat" target="_blank" class="flex items-center space-x-2 text-gray-400 hover:text-white">
+            <i class="fab fa-twitter"></i>
+            <span>X</span>
+          </a>
+          <a href="https://linkedin.com/company/fusionneat" target="_blank" class="flex items-center space-x-2 text-gray-400 hover:text-white">
+            <i class="fab fa-dribbble"></i>
+            <span>linkedin</span>
+          </a>
+          <a href="https://github.com/Fusionneat" target="_blank" class="flex items-center space-x-2 text-gray-400 hover:text-white">
+            <i class="fab fa-github"></i>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const illustration = document.getElementById('illustration');
+            const nextIllustration = document.getElementById('nextIllustration');
+
+            window.addEventListener('scroll', () => {
+                const scrollPos = window.scrollY;
+                const windowHeight = window.innerHeight;
+
+                // Animate illustration scaling when scrolling down
+                if (scrollPos > windowHeight / 4) {
+                    illustration.style.transform = 'scale(1.2)';
+                } else {
+                    illustration.style.transform = 'scale(1)';
+                }
+
+                // Animate transition to next illustration
+                const sectionTop = nextIllustration.parentElement.offsetTop;
+                if (scrollPos + windowHeight >= sectionTop) {
+                    nextIllustration.style.transform = 'scale(1)';
+                } else {
+                    nextIllustration.style.transform = 'scale(0.8)';
+                }
+            });
+        });
+
+        
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

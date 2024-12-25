@@ -1,0 +1,295 @@
+{
+    "data": [
+      {
+        "query": "What services do you provide?",
+        "intent": "services_info",
+        "response": "Fusionneat offers web development, app development, digital marketing, desktop development, graphics designing, AI model training, and AI integration in software."
+      },
+      {
+        "query": "What are your main services?",
+        "intent": "services_info",
+        "response": "Our main services include software development, web and mobile app development, digital marketing, AI integration, and custom solutions."
+      },
+      {
+        "query": "Do you build websites?",
+        "intent": "web_development",
+        "response": "Yes, we specialize in creating responsive and dynamic websites tailored to your business needs."
+      },
+      {
+        "query": "Can you help with mobile app development?",
+        "intent": "app_development",
+        "response": "Yes, we develop feature-rich mobile apps for both iOS and Android platforms."
+      },
+      {
+        "query": "What is the starting price for a basic website?",
+        "intent": "pricing_basic",
+        "response": "The starting price for a basic website is $350-$500, which includes one year of maintenance and basic SEO."
+      },
+      {
+        "query": "How long does it take to develop a website?",
+        "intent": "project_timeline",
+        "response": "Small websites can be completed in 3-4 days, while more complex ones take longer based on requirements."
+      },
+      {
+        "query": "Can you handle social media marketing?",
+        "intent": "digital_marketing",
+        "response": "Yes, we offer social media marketing as part of our digital marketing services to grow your online presence."
+      },
+      {
+        "query": "What does your digital marketing include?",
+        "intent": "digital_marketing",
+        "response": "Our digital marketing includes SEO, PPC, social media management, content creation, and email marketing."
+      },
+      {
+        "query": "Can you integrate AI features into my software?",
+        "intent": "ai_integration",
+        "response": "Yes, we integrate AI features like chatbots, predictive analytics, and recommendation systems into software."
+      },
+      {
+        "query": "Do you train AI models?",
+        "intent": "ai_training",
+        "response": "Yes, we train AI models tailored to your business needs using cutting-edge machine learning techniques."
+      },
+      {
+        "query": "What is the cost of advanced projects?",
+        "intent": "pricing_advanced",
+        "response": "The cost of advanced projects depends on the complexity. Contact us for a detailed quote."
+      },
+      {
+        "query": "Do you provide maintenance services?",
+        "intent": "support_policy",
+        "response": "Yes, we provide 1-year maintenance services with all our development plans."
+      },
+      {
+        "query": "Can you develop desktop applications?",
+        "intent": "desktop_development",
+        "response": "Yes, we develop powerful desktop applications customized for your requirements."
+      },
+      {
+        "query": "What tools do you use for desktop app development?",
+        "intent": "desktop_development",
+        "response": "We use technologies like Electron, .NET, and Python for desktop app development."
+      },
+      {
+        "query": "What is included in the medium complexity plan?",
+        "intent": "pricing_medium",
+        "response": "The medium complexity plan includes 1-year maintenance, advanced SEO, and social media handling."
+      },
+      {
+        "query": "Are your applications secure?",
+        "intent": "product_quality",
+        "response": "Yes, we ensure all applications are secure with encryption and real-time threat detection."
+      },
+      {
+        "query": "What technologies do you use for web development?",
+        "intent": "web_development",
+        "response": "We use modern technologies like React, Angular, Django, Flask, and Node.js for web development."
+      },
+      {
+        "query": "Do you design logos and graphics?",
+        "intent": "graphics_designing",
+        "response": "Yes, we provide graphics design services, including logos, banners, and marketing materials."
+      },
+      {
+        "query": "Can you manage social media accounts?",
+        "intent": "social_media_handling",
+        "response": "Yes, we manage social media accounts, ensuring consistent branding and increased engagement."
+      },
+      {
+        "query": "What is the cost for AI integration?",
+        "intent": "pricing_ai_integration",
+        "response": "The cost for AI integration depends on your software's current setup and requirements. Contact us for a quote."
+      },
+      {
+        "query": "How long does it take to integrate AI?",
+        "intent": "ai_integration_timeline",
+        "response": "AI integration typically takes 1-3 weeks, depending on the complexity of the requirements."
+      },
+      {
+        "query": "Do you provide project demos?",
+        "intent": "request_demo",
+        "response": "Yes, we provide project demos upon request. Contact us to schedule one."
+      },
+      {
+        "query": "What is your refund policy?",
+        "intent": "refund_policy",
+        "response": "Refunds are handled on a case-by-case basis and are dependent on the project's stage and terms agreed upon."
+      },
+      {
+        "query": "Can I see some of your previous projects?",
+        "intent": "portfolio_request",
+        "response": "Yes, we can share our portfolio. Contact us to learn more about our previous work."
+      },
+      {
+        "query": "What is included in a custom project?",
+        "intent": "custom_project",
+        "response": "Custom projects include tailored solutions designed specifically for your requirements. We work closely with you to define the scope."
+      },
+      {
+        "query": "Do you offer support after project delivery?",
+        "intent": "support_post_delivery",
+        "response": "Yes, we offer post-delivery support as part of our maintenance services."
+      },
+      {
+        "query": "Do you provide training for using the applications?",
+        "intent": "training_support",
+        "response": "Yes, we provide training sessions to ensure you and your team can effectively use the delivered applications."
+      },
+      {
+        "query": "What payment methods do you accept?",
+        "intent": "payment_methods",
+        "response": "We accept bank transfers, credit/debit cards, and online payment platforms like PayPal."
+      },
+      {
+        "query": "Can I pay in installments?",
+        "intent": "installment_payments",
+        "response": "Yes, installment payments can be arranged based on project size and scope."
+      },
+        {
+            "query": "What is the process for starting a project with you?",
+            "intent": "project_process",
+            "response": "The process involves initial consultation, project scoping, agreement signing, development, testing, and delivery."
+        },
+        {
+            "query": "Can you provide a detailed project proposal?",
+            "intent": "project_proposal",
+            "response": "Yes, we provide detailed project proposals outlining the scope, timeline, and cost of the project."
+        },
+        {
+            "query": "What is your response time for support queries?",
+            "intent": "support_response_time",
+            "response": "We aim to respond to support queries within 24 hours, with priority given to urgent issues."
+        },
+        {
+            "query": "Do you offer 24/7 support?",
+            "intent": "support_24_7",
+            "response": "We offer 24/7 support for critical issues and emergencies. Non-critical issues are addressed during business hours."
+        },
+        {
+            "query": "Can you provide ongoing maintenance services?",
+            "intent": "maintenance_services",
+            "response": "Yes, we offer ongoing maintenance services to keep your applications up-to-date and secure."
+        },
+        {
+            "query": "What is the cost of maintenance services?",
+            "intent": "pricing_maintenance",
+            "response": "The cost of maintenance services depends on the complexity of the application and the level of support required."
+        },
+        {
+            "query": "Do you offer hosting services?",
+            "intent": "hosting_services",
+            "response": "Yes, we offer hosting services to ensure your website or application is live and accessible to users."
+        },
+        {
+            "query": "What is the cost of hosting services?",
+            "intent": "pricing_hosting",
+            "response": "The cost of hosting services varies based on the hosting provider and the resources required for your website or application."
+        },
+        {
+            "query": "Can you help with domain registration?",
+            "intent": "domain_registration",
+            "response": "Yes, we can assist with domain registration to ensure your website has a unique and memorable domain name."
+        },
+        {
+            "query": "What is the process for domain registration?",
+            "intent": "domain_registration_process",
+            "response": "The process involves checking domain availability, selecting a domain name, registering the domain, and configuring it for use."
+        },
+        {
+            "query": "Do you provide SSL certificates?",
+            "intent": "ssl_certificates",
+            "response": "Yes, we provide SSL certificates to secure your website and protect user data."
+        },
+        {
+            "query": "What is the cost of SSL certificates?",
+            "intent": "pricing_ssl_certificates",
+            "response": "The cost of SSL certificates varies based on the type of certificate and the level of security required."
+        },
+        {
+            "query": "Can you help with website migration?",
+            "intent": "website_migration",
+            "response": "Yes, we can assist with website migration to ensure a smooth transition to a new hosting provider or platform."
+        },
+        {
+            "query": "What is the process for website migration?",
+            "intent": "website_migration_process",
+            "response": "The process involves backing up the existing website, transferring files and databases, configuring the new server, and testing the migrated website."
+        },
+        {
+            "query": "Do you offer content writing services?",
+            "intent": "content_writing",
+            "response": "Yes, we offer content writing services to create engaging and SEO-friendly content for your website or marketing materials."
+        },
+        {
+            "query": "What is the cost of content writing services?",
+            "intent": "pricing_content_writing",
+            "response": "The cost of content writing services depends on the type and volume of content required. Contact us for a quote."
+        },
+        {
+            "query": "Can you help with search engine optimization (SEO)?",
+            "intent": "seo_services",
+            "response": "Yes, we offer SEO services to improve your website's visibility and ranking on search engines."
+        },
+        {
+            "query": "What is the cost of SEO services?",
+            "intent": "pricing_seo",
+            "response": "The cost of SEO services varies based on the scope of work and the competitiveness of the keywords targeted."
+        },
+        {
+            "query": "Do you provide social media marketing services?",
+            "intent": "social_media_marketing",
+            "response": "Yes, we provide social media marketing services to help you reach and engage with your target audience."
+        },
+        {
+            "query": "What is the cost of social media marketing services?",
+            "intent": "pricing_social_media_marketing",
+            "response": "The cost of social media marketing services depends on the platforms used, the target audience, and the scope of the campaign."
+        },
+        {
+            "query": "Can you help with pay-per-click (PPC) advertising?",
+            "intent": "ppc_advertising",
+            "response": "Yes, we offer PPC advertising services to drive targeted traffic to your website and increase conversions."
+        },
+        {
+            "query": "What is the cost of PPC advertising services?",
+            "intent": "pricing_ppc_advertising",
+            "response": "The cost of PPC advertising services depends on the platforms used, the target audience, and the budget allocated for the campaign."
+        },
+        {
+            "query": "Do you provide email marketing services?",
+            "intent": "email_marketing",
+            "response": "Yes, we provide email marketing services to help you connect with your audience, promote your products, and drive conversions."
+        },
+        {
+            "query": "What is the cost of email marketing services?",
+            "intent": "pricing_email_marketing",
+            "response": "The cost of email marketing services depends on the size of your email list, the frequency of campaigns, and the complexity of the emails."
+        },
+        {
+            "query": "Can you help with influencer marketing?",
+            "intent": "influencer_marketing",
+            "response": "Yes, we offer influencer marketing services to help you collaborate with influencers and reach a wider audience."
+        },
+        {
+            "query": "What is the cost of influencer marketing services?",
+            "intent": "pricing_influencer_marketing",
+            "response": "The cost of influencer marketing services varies based on the influencer's reach, engagement rate, and the scope of the campaign."
+        },
+        {
+            "query": "Do you provide video production services?",
+            "intent": "video_production",
+            "response": "Yes, we provide video production services to create engaging videos for marketing, training, and promotional purposes."
+        },
+        {
+            "query": "What is the cost of video production services?",
+            "intent": "pricing_video_production",
+            "response": "The cost of video production services depends on the type of video, the length, the complexity, and the production quality."
+        },
+        {
+            "query": "Can you help with branding and design?",
+            "intent": "branding_design",
+            "response": "Yes, we offer branding and design services to help you create a unique and memorable brand identity."
+        }
+    ]
+  }
+  
