@@ -14,3 +14,9 @@ SQLAlchemy
 flask_sqlalchemy
 python-dotenv
 flask-bcrypt
+flask-login
+flask-mail
+flask-wtf
+flask-uploads
+flask-migrate
+flask-socketio
