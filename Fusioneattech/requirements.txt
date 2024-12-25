@@ -20,4 +20,3 @@ flask-wtf
 flask-uploads
 flask-migrate
 flask-socketio
-smtplib
