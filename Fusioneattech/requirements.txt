@@ -9,5 +9,4 @@ wheel
 wrapt
 WTForms
 gunicorn
-bootstrap
-tailwindcss
+flask-bootstrap
