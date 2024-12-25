@@ -11,3 +11,4 @@ WTForms
 gunicorn
 flask-bootstrap
 SQLAlchemy
+flask_sqlalchemy
