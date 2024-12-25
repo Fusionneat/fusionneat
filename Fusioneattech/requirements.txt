@@ -12,3 +12,5 @@ gunicorn
 flask-bootstrap
 SQLAlchemy
 flask_sqlalchemy
+python-dotenv
+flask-bcrypt
