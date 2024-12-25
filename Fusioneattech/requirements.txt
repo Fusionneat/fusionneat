@@ -10,3 +10,4 @@ wrapt
 WTForms
 gunicorn
 flask-bootstrap
+SQLAlchemy
